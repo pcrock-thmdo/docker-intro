@@ -1,9 +1,10 @@
+---
 author: ""
 ---
 
 # Introduction to Docker and Containers
 
-Source for this presentation can be found at:
+Source for this presentation and examples can be found at:
 
 https://github.com/pcrockett/docker-intro
 
@@ -42,7 +43,7 @@ Great for reducing how many physical servers you have to manage
 
 A middle ground between physical and virtual servers
 
-* Like living in a jail cell
+* Less like the Matrix, more like a jail cell
 * _Very low_ overhead
     * it's just a normal process, with restrictions
 * _Pretty good_ compartmentalization
@@ -146,35 +147,82 @@ RUN echo "bar" > some-other-file
 
 ## Docker
 
-### Dockerfile Example
+### Practical Example
 
-Quiz: What do you think happens when we add this?
+Let's look at some examples now.
 
-```docker
-# Remove the first file we created
-RUN rm some-file
+---
+
+## Last Remarks
+
+### Tools: Hadolint
+
+Dockerfile linter. Error messages are helpful, but wiki is even more helpful:
+
+https://github.com/hadolint/hadolint/wiki
+
+Not only does it explain lint errors, but also suggests what you should do to correct the problem.
+
+---
+
+## Last Remarks
+
+### Tools: Dockerfile reference
+
+Everything you need to know about Dockerfiles:
+
+https://docs.docker.com/engine/reference/builder/
+
+Links to a good best practices article if you want to go deeper.
+
+---
+
+## Last Remarks
+
+### There's More
+
+There are lots of other Docker options that allow you to:
+
+* run containers in background
+* attach a terminal to a running container
+* volume management
+* image management
+* etc.
+
+---
+
+## Last Remarks
+
+### There's More
+
+Docker help messages are very useful:
+
+```bash
+docker --help
+docker [subcommand] --help
 ```
 
 ---
 
-## Docker
-
-### Practical Example
-
-Let's create a personal sandbox container.
-
----
-
-## Docker
+## Last Remarks
 
 ### Differences between Linux, macOS, Windows
 
 * Non-Linux systems don't have the same capability / namespace features
     * Docker creates a Linux VM, manages it for you
-    * `root` inside the container == `root` in the Linux VM
+    * _root_ inside the container == _root_ in the Linux VM
 * Linux systems run containers "closer to the metal" - no VM
-    * `root` inside the container == `root` on **YOUR COMPUTER**
+    * _root_ inside the container == _root_ on **YOUR COMPUTER**
     * Cannot use Docker without elevated privileges
     * _Side note:_ Linux users consider using Podman instead of Docker
 
 ---
+
+## El Fin
+
+That's it for now. Questions?
+
+Perhaps in the future we can cover Docker Compose.
+
+**Pull requests welcome!**
+
