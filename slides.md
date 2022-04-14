@@ -56,10 +56,10 @@ A middle ground between physical and virtual servers
 ### What is a (Linux) container?
 
 * "container" != "Docker"
-* A regular Linux process
+* Regular Linux process(es)
 * Runs directly on top of the Linux kernel
 * Has a "restricted view" of the world
-    * capabilities and namespaces
+    * control groups, namespaces, capabilities, blah blah blah
 
 ---
 
@@ -67,7 +67,7 @@ A middle ground between physical and virtual servers
 
 ### What is a container runtime?
 
-Container runtimes are simply tools that make it easy to run processes inside namespaces / with restricted capabilities.
+_Runtimes_ are tools that manage cgroups, namespaces, capabilities, etc. for processes.
 
 * Example: LXD - "system containers"
     * Like a lightweight VM. Focus on deploying _systems_ easily.
